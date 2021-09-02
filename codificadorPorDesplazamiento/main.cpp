@@ -38,11 +38,12 @@ void menu(int narg, char *args[])
                string uAlpha; 
                cout << "Ingrese la clave con la que se cifrara: ";
                cin >> uKey;
-               cout << "Ingrese el alfabeto a ser usado: ";
+               cout << "Ingrese el alfabeto a ser usado, pulse enter para usar el alfabeto por defecto (abcdefghijklmnopqrstuvwxyz\\n ): ";
                cin.get();
                getline(cin, uAlpha);
 
-               cout << cypher(fullWord, uAlpha, uKey);
+               if (uAlpha.empty()) cout << cypher(fullWord, "abcdefghijklmnopqrstuvwxyz\n ", uKey) << endl;
+               else cout << cypher(fullWord, uAlpha, uKey) << endl;
            }
     }
 }
